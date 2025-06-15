@@ -1,17 +1,18 @@
 # Orion Library
-This documentation is for the stable release of Orion Library.
+This is a slightly customized documentation of the [**Orion Library**](https://github.com/jensonhirst/Orion). <br>Credits to its rightful owner, [**Jensonhirst/Shlex**](https://github.com/jensonhirst).
+
+I've modified the original [**Orion Source Code**](https://github.com/jensonhirst/Orion) to remove unwanted in-game notifications, that promotes the creator's new UI Library, [**Rayfield**](https://github.com/SiriusSoftwareLtd/Rayfield). Since Orion will no longer receive any updates, this version keeps the library cleaner and free from those messages.
 
 ## Booting the Library
 ```lua
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/SilentChimera/Skvllware/main/OrionSource')))()
 ```
-
-
 
 ## Creating a Window
 ```lua
 local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
+```
+```lua
 --[[
 Name = <string> - The name of the UI.
 HidePremium = <bool> - Whether or not the user details shows Premium status or not.
@@ -25,8 +26,6 @@ CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 ```
 
-
-
 ## Creating a Tab
 ```lua
 local Tab = Window:MakeTab({
@@ -34,19 +33,22 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 ```
+
 ## Creating a Section
 ```lua
 local Section = Tab:AddSection({
 	Name = "Section"
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the section.
 ]]
@@ -61,7 +63,8 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
-
+```
+```lua
 --[[
 Title = <string> - The title of the notification.
 Content = <string> - The content of the notification.
@@ -69,8 +72,6 @@ Image = <string> - The icon of the notification.
 Time = <number> - The duration of the notfication.
 ]]
 ```
-
-
 
 ## Creating a Button
 ```lua
@@ -80,13 +81,13 @@ Tab:AddButton({
       		print("button pressed")
   	end    
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 ```
-
 
 ## Creating a Checkbox toggle
 ```lua
@@ -97,7 +98,8 @@ Tab:AddToggle({
 		print(Value)
 	end    
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the toggle.
 Default = <bool> - The default value of the toggle.
@@ -121,7 +123,8 @@ Tab:AddColorpicker({
 		print(Value)
 	end	  
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the colorpicker.
 Default = <color3> - The default value of the colorpicker.
@@ -149,7 +152,8 @@ Tab:AddSlider({
 		print(Value)
 	end    
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the slider.
 Min = <number> - The minimal value of the slider.
@@ -200,7 +204,8 @@ Tab:AddTextbox({
 		print(Value)
 	end	  
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the textbox.
 Default = <string> - The default value of the textbox.
@@ -220,7 +225,8 @@ Tab:AddBind({
 		print("press")
 	end    
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the bind.
 Default = <keycode> - The default value of the bind.
@@ -245,7 +251,8 @@ Tab:AddDropdown({
 		print(Value)
 	end    
 })
-
+```
+```lua
 --[[
 Name = <string> - The name of the dropdown.
 Default = <string> - The default value of the dropdown.
